@@ -17,18 +17,18 @@ body{
     align-content: center;
 }
 
-.tecla, .del, .borrar, .operador{
+.tecla, .operador, #del, #borrar{
     background-color:white;
     border: 1px solid;
     text-align: center;
     align-content: center;
 }
 
-.tecla:hover, .del:hover, .borrar:hover, .operador:hover{
+.tecla:hover, .operador:hover, #del:hover, #borrar:hover, #teclaIgual:hover{
     background-color:lightgray;
 }
 
-.teclaIgual{
+#teclaIgual{
     background-color: white;
     border: 1px solid;
     grid-column: 1 / 5;
@@ -37,6 +37,3 @@ body{
     align-content: center;
 }
 
-.teclaIgual:hover{
-    background-color: lightgray;
-}
