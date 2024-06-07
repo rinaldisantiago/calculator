@@ -63,22 +63,20 @@ igual.addEventListener("click", () => {
   }
 });
 
-/*
-del.addEventListener("click", () => {
-    if (operacion === "") {
-        num1.innerText -= pantalla.innerText;
-    } else {
-        num2.innerText -= pantalla.innerText;
-    }
-})
-*/
 
-//*Falta que cuando este el resultado que se reinicie los numeros y la operacion
+del.addEventListener("click", () => {
+  if (operacion === "") {
+    num1 = num1.slice(0, num1.length -1);
+    pantalla.innerText = num1;
+  } else {
+    num2 = num2.slice(0, num2.length -1);
+    pantalla.innerText = num2;
+  }
+})
+
 borrar.addEventListener("click", () => {
-    if (operacion === "") {
-        num1 = "";
-    } else {
-        num2 = "";
-    }
     pantalla.innerText = "";
+    num1 = "";
+    num2 = "";
+    operacion = "";
 })
