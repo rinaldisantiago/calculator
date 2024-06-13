@@ -44,39 +44,50 @@ for (let i = 0; i < operaciones.length; i++) {
 
 igual.addEventListener("click", () => {
   num1 = parseFloat(num1);
-  num2 = parseFloat(num2);
   switch (operacion) {
     case "suma":
+      num2 = parseFloat(num2);  
       pantalla.innerText = num1 + num2;
       break;
     case "resta":
+      num2 = parseFloat(num2);
       pantalla.innerText = num1 - num2;
       break;
     case "multiplica":
+      num2 = parseFloat(num2);
       pantalla.innerText = num1 * num2;
       break;
     case "divide":
-      pantalla.innerText = num1 / num2;
-      break;
+      num2 = parseFloat(num2);
+      if (num2 === 0) {
+        pantalla.innerText = "MATH ERROR";
+        break;
+      } else {
+        pantalla.innerText = num1 / num2;
+        break;
+      }
     default:
       console.log("Operacion no valida");
   }
 });
 
-
 del.addEventListener("click", () => {
   if (operacion === "") {
-    num1 = num1.slice(0, num1.length -1);
+    num1 = num1.slice(0, num1.length - 1);
     pantalla.innerText = num1;
   } else {
-    num2 = num2.slice(0, num2.length -1);
-    pantalla.innerText = num2;
+    if (num2 === "") {
+      operacion = "";
+    } else {
+      num2 = num2.slice(0, num2.length - 1);
+      pantalla.innerText = num2;
+    }
   }
-})
+});
 
 borrar.addEventListener("click", () => {
-    pantalla.innerText = "";
-    num1 = "";
-    num2 = "";
-    operacion = "";
-})
+  pantalla.innerText = "";
+  num1 = "";
+  num2 = "";
+  operacion = "";
+});
